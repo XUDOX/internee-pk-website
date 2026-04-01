@@ -1,73 +1,25 @@
-# React + TypeScript + Vite
+# Internee.pk Clone - Cloud Migration & Deployment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive clone of the Internee.pk platform, built with React and deployed to a professional cloud infrastructure.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+[View the Live Project](https://yaseen-cloud-project.duckdns.org)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
+* **Frontend:** React.js, Vite, Tailwind CSS
+* **Infrastructure:** AWS EC2 (Ubuntu 22.04 LTS)
+* **Web Server:** Nginx
+* **Security:** HTTPS via Let's Encrypt SSL (Certbot)
+* **Deployment:** WinSCP & SSH
 
-## React Compiler
+## 📖 Key Features
+* **Modern UI:** Pixel-perfect recreation of the Internee.pk landing page.
+* **Responsive Design:** Optimized for mobile, tablet, and desktop views.
+* **Cloud Hosted:** Migrated from local development to a globally accessible AWS instance.
+* **Secure Connection:** SSL/TLS encryption implemented for safe browsing.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 Deployment Steps
+1. Optimized the React build using `npm run build`.
+2. Provisioned an AWS EC2 instance and configured Security Groups for Ports 80 and 443.
+3. Configured Nginx as a reverse proxy to serve the static build and handle SPA routing.
+4. Integrated Let's Encrypt via Certbot for automated SSL certificate management.
